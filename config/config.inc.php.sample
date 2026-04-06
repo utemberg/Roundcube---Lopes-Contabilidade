@@ -63,7 +63,7 @@ $config['plugins'] = [
 ];
 
 // skin name: folder from skins/
-$config['skin'] = 'elastic';
+$config['skin'] = 'innovatechbyte';
 // ========== PERSONALIZAÇÕES DA EMPRESA ==========
 
 // Nome do produto (aparece no título e tela de login)
