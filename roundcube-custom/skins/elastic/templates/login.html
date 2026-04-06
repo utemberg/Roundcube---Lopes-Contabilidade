@@ -1,0 +1,70 @@
+<roundcube:include file="includes/layout.html" />
+
+<!-- CSS Personalizado da Empresa -->
+<style>
+  /* Fundo da página */
+  body.login {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  /* Container do formulário de login */
+  .login-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    padding: 30px;
+  }
+  
+  /* Botão de login */
+  .btn-primary {
+    background-color: #005a9c;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #003d6b;
+    transform: translateY(-2px);
+  }
+  
+  /* Mensagem de boas-vindas personalizada */
+  .welcome-message {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+</style>
+
+<h1 class="voice" style="display: none;"><roundcube:object name="productname" /> <roundcube:label name="login" /></h1>
+
+<div id="layout-content" class="selected no-navbar" role="main">
+    <!-- Mensagem de boas-vindas personalizada -->
+    <div class="welcome-message">
+        <h2>Bem-vindo ao E-mail Corporativo</h2>
+        <p>Faça login para acessar sua conta</p>
+    </div>
+    
+    <roundcube:object name="logo" src="/skins/elastic/images/logo.svg" id="logo" alt="Minha Empresa" />
+    
+    <roundcube:form id="login-form" name="login-form" method="post" class="propform">
+        <roundcube:object name="loginform" form="login-form" size="40" submit=true class="form-control" />
+        
+        <div id="login-footer" role="contentinfo">
+            <div style="text-align: center; margin-top: 20px; font-size: 12px; color: #666;">
+                &copy; 2024 Minha Empresa. Todos os direitos reservados.
+            </div>
+            <roundcube:object name="productname" condition="config:display_product_info &gt; 0" />
+            <roundcube:object name="version" condition="config:display_product_info == 2" />
+            <roundcube:if condition="config:support_url" />
+                &nbsp;&bull;&nbsp; <a href="<roundcube:var name='config:support_url' />" target="_blank" rel="noopener" class="support-link"><roundcube:label name="support" /></a>
+            <roundcube:endif />
+            <roundcube:container name="loginfooter" id="login-footer" />
+        </div>
+    </form>
+</div>
+
+<noscript>
+    <p class="noscriptwarning"><roundcube:label name="noscriptwarning" /></p>
+</noscript>
+
+<roundcube:include file="includes/footer.html" />
