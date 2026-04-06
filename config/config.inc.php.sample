@@ -29,11 +29,11 @@ $config['db_dsnw'] = 'mysql://roundcube:pass@localhost/roundcubemail';
 
 // IMAP host chosen to perform the log-in.
 // See defaults.inc.php for the option description.
-$config['imap_host'] = 'localhost:143';
+$config['imap_host'] = 'imap-vip.uni5.net:143';
 
 // SMTP server host (for sending mails).
 // See defaults.inc.php for the option description.
-$config['smtp_host'] = 'localhost:587';
+$config['smtp_host'] = 'smtp-vip.uni5.net:587';
 
 // SMTP username (if required) if you use %u as the username Roundcube
 // will use the current username for login
@@ -45,10 +45,10 @@ $config['smtp_pass'] = '%p';
 
 // provide an URL where a user can get support for this Roundcube installation
 // PLEASE DO NOT LINK TO THE ROUNDCUBE.NET WEBSITE HERE!
-$config['support_url'] = '';
+$config['support_url'] = 'https://innovatechbyte.com.br';
 
 // Name your service. This is displayed on the login screen and in the window title
-$config['product_name'] = 'Roundcube Webmail';
+$config['product_name'] = 'Innova Techbyte | Email Web';
 
 // This key is used to encrypt the users imap password which is stored
 // in the session record. For the default cipher method it must be
@@ -64,3 +64,19 @@ $config['plugins'] = [
 
 // skin name: folder from skins/
 $config['skin'] = 'elastic';
+// ========== PERSONALIZAÇÕES DA EMPRESA ==========
+
+// Nome do produto (aparece no título e tela de login)
+$config['product_name'] = 'E-mail Corporativo | Innova Techbyte';
+
+// Logo personalizado (caminho relativo à raiz do Roundcube)
+$config['skin_logo'] = '/assets/logo.png';
+
+// URL de suporte (substitua pelo seu link)
+$config['support_url'] = 'https://innovatechbyte.com.br';
+
+// Cor primária do tema (se quiser mudar a cor principal)
+$config['primary_color'] = '#005a9c'; // Azul corporativo
+
+// Favicon personalizado
+$config['favicon_url'] = '/custom/favicon.ico';
