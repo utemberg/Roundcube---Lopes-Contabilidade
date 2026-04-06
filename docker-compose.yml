@@ -11,3 +11,6 @@ services:
       - ROUNDCUBEMAIL_DEFAULT_PORT=993
       - ROUNDCUBEMAIL_SMTP_SERVER=tls://smtp-vip.uni5.net
       - ROUNDCUBEMAIL_SMTP_PORT=587
+mkdir -p ./roundcube-custom/skins/elastic/images
+mkdir -p ./roundcube-custom/skins/elastic/templates
+mkdir -p ./roundcube-custom/config
