@@ -1,0 +1,351 @@
+:root {
+  --lopes-bg: #07111f;
+  --lopes-bg-2: #0f2038;
+  --lopes-surface: rgba(10, 18, 32, 0.72);
+  --lopes-surface-solid: #0d1728;
+  --lopes-border: rgba(255, 255, 255, 0.08);
+  --lopes-text: #e5eefc;
+  --lopes-muted: #9db0cb;
+  --lopes-accent: #4f8cff;
+  --lopes-accent-2: #73b1ff;
+  --lopes-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --lopes-radius-xl: 28px;
+  --lopes-radius-lg: 20px;
+}
+
+html,
+body,
+body.task-login {
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(79, 140, 255, 0.22), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(115, 177, 255, 0.14), transparent 28%),
+    linear-gradient(135deg, var(--lopes-bg) 0%, var(--lopes-bg-2) 100%);
+}
+
+body.task-login #layout {
+  background: transparent;
+}
+
+body.task-login #layout-content.lopes-login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 32px;
+  width: 100%;
+}
+
+.lopes-shell {
+  width: min(1200px, 100%);
+  min-height: 700px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  border: 1px solid var(--lopes-border);
+  background: rgba(8, 14, 24, 0.36);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--lopes-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--lopes-shadow);
+}
+
+.lopes-hero,
+.lopes-panel {
+  position: relative;
+}
+
+.lopes-hero {
+  overflow: hidden;
+  padding: 56px;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+}
+
+.lopes-hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(79,140,255,0.18), transparent 45%),
+    linear-gradient(135deg, rgba(115,177,255,0.12), transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.16), transparent 18%),
+    radial-gradient(circle at 20% 85%, rgba(79,140,255,0.22), transparent 22%);
+  pointer-events: none;
+}
+
+.lopes-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+.lopes-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--lopes-text);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lopes-title {
+  margin: 22px 0 16px;
+  color: #fff;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.lopes-subtitle {
+  margin: 0;
+  max-width: 48ch;
+  color: var(--lopes-muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.lopes-points {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.lopes-points li {
+  position: relative;
+  padding-left: 30px;
+  color: var(--lopes-text);
+  font-size: 15px;
+}
+
+.lopes-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--lopes-accent), var(--lopes-accent-2));
+  box-shadow: 0 0 0 6px rgba(79, 140, 255, 0.12);
+}
+
+.lopes-panel {
+  background: linear-gradient(180deg, rgba(13, 23, 40, 0.96), rgba(8, 15, 28, 0.98));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 42px;
+}
+
+.lopes-panel__inner {
+  width: min(420px, 100%);
+}
+
+.lopes-branding {
+  display: grid;
+  gap: 22px;
+  margin-bottom: 26px;
+}
+
+#logo {
+  position: static !important;
+  top: auto !important;
+  display: block;
+  width: auto;
+  max-width: 220px;
+  max-height: 76px;
+  margin: 0;
+}
+
+.lopes-overline {
+  display: inline-block;
+  color: var(--lopes-accent-2);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.lopes-branding__text h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.lopes-branding__text p {
+  margin: 0;
+  color: var(--lopes-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+#login-form.lopes-form {
+  position: static;
+  top: auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 26px;
+  border-radius: var(--lopes-radius-lg);
+  border: 1px solid var(--lopes-border);
+  background: rgba(255,255,255,0.03);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+#login-form table,
+#login-form tbody {
+  display: block;
+  width: 100%;
+}
+
+#login-form .row {
+  margin: 0 0 14px;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"],
+#login-form input[type="email"],
+#login-form select {
+  width: 100%;
+  min-height: 54px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(7, 14, 24, 0.88);
+  color: #fff;
+  box-shadow: none;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+#login-form input::placeholder {
+  color: #8ca0bc;
+}
+
+#login-form input:focus,
+#login-form select:focus {
+  border-color: rgba(115, 177, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.14);
+  outline: none;
+}
+
+#login-form .formbuttons,
+#login-form p.formbuttons,
+#login-form .button-group {
+  margin-top: 20px;
+}
+
+#login-form .btn,
+#login-form button,
+#login-form input[type="submit"],
+#rcmloginsubmit {
+  width: 100%;
+  min-height: 56px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--lopes-accent), var(--lopes-accent-2));
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  box-shadow: 0 18px 30px rgba(79, 140, 255, 0.22);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+#login-form .btn:hover,
+#login-form button:hover,
+#login-form input[type="submit"]:hover,
+#rcmloginsubmit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 34px rgba(79, 140, 255, 0.28);
+  filter: brightness(1.03);
+}
+
+#login-form .btn:active,
+#login-form button:active,
+#login-form input[type="submit"]:active,
+#rcmloginsubmit:active {
+  transform: translateY(0);
+}
+
+#login-form .box-bottom,
+#login-form .box-footer,
+#login-form .oauthlogin {
+  border-color: rgba(255,255,255,0.08);
+}
+
+.lopes-footer,
+#login-footer {
+  margin-top: 18px;
+  text-align: center;
+  color: var(--lopes-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+#login-footer a {
+  color: var(--lopes-accent-2);
+}
+
+.noscriptwarning {
+  max-width: 1200px;
+  margin: 18px auto 0;
+  color: #fff;
+  background: rgba(185, 28, 28, 0.9);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 14px 18px;
+}
+
+@media (max-width: 1024px) {
+  .lopes-shell {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .lopes-hero {
+    min-height: 280px;
+    padding: 36px;
+    align-items: flex-start;
+  }
+
+  .lopes-title {
+    font-size: clamp(30px, 6vw, 42px);
+  }
+}
+
+@media (max-width: 640px) {
+  body.task-login #layout-content.lopes-login-page {
+    padding: 14px;
+  }
+
+  .lopes-hero,
+  .lopes-panel {
+    padding: 22px;
+  }
+
+  .lopes-title {
+    font-size: 28px;
+  }
+
+  .lopes-subtitle,
+  .lopes-branding__text p {
+    font-size: 14px;
+  }
+
+  #login-form.lopes-form {
+    padding: 18px;
+    border-radius: 18px;
+  }
+}
