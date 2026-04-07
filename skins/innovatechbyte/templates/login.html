@@ -1,34 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><roundcube:object name="pagetitle" /></title>
-    <roundcube:include file="includes/links.html" />
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body class="login-page">
-    <div class="login-container">
-        <div class="login-card">
-            <div class="login-header">
-                <div class="logo-wrapper">
-                    <div class="logo-byte">IB</div>
-                </div>
-                <h1>InnovatechByte</h1>
-                <p class="subtitle">Secure Communication Gateway</p>
-            </div>
+<roundcube:include file="includes/layout.html" />
 
-            <div class="login-form">
-                <roundcube:object name="loginform" form="form" />
-            </div>
+<h1 class="voice"><roundcube:object name="productname" /> <roundcube:label name="login" /></h1>
 
-            <div class="login-footer">
-                <roundcube:object name="message" id="message" />
-                <p>&copy; <roundcube:var name="year" /> InnovatechByte</p>
-            </div>
+<div id="layout-content" class="selected no-navbar lopes-login-page" role="main">
+  <section class="lopes-shell">
+    <aside class="lopes-hero" aria-label="Apresentação">
+      <div class="lopes-hero__bg"></div>
+      <div class="lopes-hero__content">
+        <div class="lopes-badge">Lopes Contabilidade Consultiva</div>
+        <h2 class="lopes-title">Seu e-mail profissional com uma experiência mais clara, elegante e rápida.</h2>
+        <p class="lopes-subtitle">Acesse sua conta com segurança e continue sua rotina com um painel visual pensado para performance, confiança e simplicidade.</p>
+
+        <ul class="lopes-points" aria-label="Diferenciais">
+          <li>Visual limpo e moderno</li>
+          <li>Leitura confortável em qualquer tela</li>
+          <li>Identidade visual alinhada à sua empresa</li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="lopes-panel" aria-label="Login">
+      <div class="lopes-panel__inner">
+        <div class="lopes-branding">
+          <roundcube:object name="logo" src="/images/logo-login.svg" id="logo" alt="Lopes Contabilidade Consultiva" />
+          <div class="lopes-branding__text">
+            <span class="lopes-overline">Webmail corporativo</span>
+            <h3>Acesse sua conta</h3>
+            <p>Entre com seu e-mail e senha para continuar.</p>
+          </div>
         </div>
-    </div>
 
-    <roundcube:include file="includes/footer.html" />
-</body>
-</html>
+        <roundcube:form id="login-form" name="login-form" method="post" class="propform lopes-form">
+          <roundcube:object name="loginform" form="login-form" size="40" submit="true" class="form-control" />
+
+          <div id="login-footer" class="lopes-footer" role="contentinfo">
+            <roundcube:object name="productname" condition="config:display_product_info &gt; 0" />
+            <roundcube:object name="version" condition="config:display_product_info == 2" />
+            <roundcube:if condition="config:support_url" />
+              &nbsp;&bull;&nbsp; <a href="<roundcube:var name='config:support_url' />" target="_blank" rel="noopener" class="support-link"><roundcube:label name="support" /></a>
+            <roundcube:endif />
+            <roundcube:container name="loginfooter" id="login-footer" />
+          </div>
+        </form>
+      </div>
+    </section>
+  </section>
+</div>
+
+<noscript>
+  <p class="noscriptwarning"><roundcube:label name="noscriptwarning" /></p>
+</noscript>
+
+<roundcube:include file="includes/footer.html" />
