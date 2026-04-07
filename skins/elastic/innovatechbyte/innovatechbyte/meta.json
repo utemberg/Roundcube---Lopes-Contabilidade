@@ -1,8 +1,7 @@
 {
-  "name": "InnovatechByte",
-  "author": "InnovatechByte Design Team",
-  "version": "1.0.0",
-  "license": "GPLv3+",
-  "description": "Modern, tech-focused skin for Roundcube Webmail.",
-  "thumbnail": "thumbnail.png"
+  "name": "Lopes",
+  "author": "Sua Empresa",
+  "url": "http://email.eduardolopescontador.com.br",
+  "license": "CC-BY-SA",
+  "extends": "elastic"
 }
